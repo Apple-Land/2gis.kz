@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apple Land — местоположение магазина</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+<style>
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background:#f4f4f4;
+}
+
+header{
+background:#111;
+color:white;
+padding:16px;
+text-align:center;
+font-size:20px;
+font-weight:bold;
+}
+
+#map{
+height:100vh;
+width:100%;
+}
+
+.store-card{
+width:220px;
+}
+
+.store-card img{
+width:100%;
+border-radius:8px;
+margin-bottom:8px;
+}
+
+.store-name{
+font-size:16px;
+font-weight:bold;
+margin-bottom:4px;
+}
+
+.rating{
+color:#f5a623;
+font-weight:bold;
+margin-bottom:6px;
+}
+
+.info{
+font-size:13px;
+margin-bottom:6px;
+}
+
+.phone{
+font-size:14px;
+font-weight:bold;
+}
+
+.button{
+display:inline-block;
+margin-top:8px;
+padding:6px 10px;
+background:black;
+color:white;
+text-decoration:none;
+border-radius:6px;
+font-size:12px;
+}
+
+.sidebar{
+position:fixed;
+left:-380px;
+top:0;
+width:360px;
+height:100%;
+background:white;
+box-shadow:4px 0 10px rgba(0,0,0,0.2);
+z-index:1000;
+transition:0.3s;
+overflow-y:auto;
+}
+
+.sidebar.open{
+left:0;
+}
+
+.sidebar-content{
+padding:20px;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.side-photo{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.side-rating{
+color:#f5a623;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+.side-info{
+font-size:14px;
+margin-bottom:10px;
+}
+
+.side-description{
+font-size:13px;
+margin-bottom:12px;
+}
+
+.review{
+background:#f2f2f2;
+padding:8px;
+border-radius:6px;
+margin-bottom:6px;
+font-size:13px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+Apple Land — местоположение магазина
+</header>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+var map = L.map('map').setView([48.0, 67.0], 5);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: '© OpenStreetMap'
+}).addTo(map);
+
+
+var popupContent = `
+<div class="store-card">
+
+<img src="store.PNG">
+
+<div class="store-name">Apple Land</div>
+
+<div class="rating">★★★★★ 5000+ положительных отзывов</div>
+
+<div class="info">
+📍 Казахстан<br>
+🕒 График работы: 10:00 – 21:00 ежедневно
+</div>
+
+<div class="phone">
+📞 +7 (708) 386‑04‑78
+</div>
+
+<a class="button" href="https://www.instagram.com/appleland_official?igsh=MWs0a2g4bDV1ZWdqOQ==" target="_blank">
+Instagram
+</a>
+
+</div>
+`;
+
+
+var marker = L.marker([43.238949, 76.889709]).addTo(map);
+marker.bindPopup(popupContent);
+
+marker.on('click', function(){
+document.getElementById('sidebar').classList.add('open');
+});
+
+
+</script>
+
+
+<div id="sidebar" class="sidebar">
+<div class="sidebar-content">
+
+<h2>Apple Land</h2>
+
+<img src="store.PNG" class="side-photo">
+
+<div class="side-rating">★★★★★ 5000+ отзывов</div>
+
+<p class="side-info">
+📍 Шымкент, Казахстан<br>
+🕒 10:00 – 21:00 ежедневно<br>
+📞 +7 (708) 386‑04‑78
+</p>
+
+<p class="side-description">
+Официальный магазин техники Apple в Шымкенте.
+iPhone, MacBook, аксессуары и сервис.
+Более 5000 довольных клиентов.
+</p>
+
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Отличный магазин, покупал iPhone — всё быстро и честно.</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Хорошие цены и сервис. Рекомендую.</div>
+
+<a class="button" href="https://www.instagram.com/appleland_official?igsh=MWs0a2g4bDV1ZWdqOQ==" target="_blank">
+Instagram
+</a>
+
+</div>
+</div>
+
+</body>
+</html>
