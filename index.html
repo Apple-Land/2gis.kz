@@ -193,7 +193,7 @@ document.getElementById('sidebar').classList.remove('open');
 
 var map = L.map('map', {
 attributionControl: false
-}).setView([51.163731, 71.459], 16);
+}).setView([51.163624, 71.459067], 16);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '© OSM'
@@ -228,7 +228,7 @@ var popupContent = `
 `;
 
 
-var marker = L.marker([51.163731, 71.459]).addTo(map);
+var marker = L.marker([51.163624, 71.459067]).addTo(map);
 marker.bindPopup(popupContent);
 
 marker.on('click', function(){
