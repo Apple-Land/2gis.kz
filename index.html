@@ -148,10 +148,6 @@ margin-top:8px;
 
 <body>
 
-<header>
-Apple Land — местоположение магазина
-</header>
-
 <div id="map"></div>
 
 <div id="sidebar" class="sidebar">
@@ -164,13 +160,13 @@ Apple Land — местоположение магазина
 <div class="side-rating">★★★★★ 8300+ отзывов</div>
 
 <p class="side-info">
-📍 Аргынбекова 81, Шымкент<br>
+📍 Астана, ул. Кенесары, 70А<br>
 🕒 10:00 – 21:00 ежедневно<br>
 📞 +7 (708) 386‑04‑78
 </p>
 
 <p class="side-description">
-Официальный магазин техники в Шымкент.
+Официальный магазин техники.
 Лучшие цены на рынке.
 Рассрочка Kaspi 0-0-12.
 Более 8300 довольных клиентов.
@@ -197,7 +193,7 @@ document.getElementById('sidebar').classList.remove('open');
 
 var map = L.map('map', {
 attributionControl: false
-}).setView([42.3618597, 69.6037711], 16);
+}).setView([51.163731, 71.459], 16);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '© OSM'
@@ -214,7 +210,7 @@ var popupContent = `
 <div class="rating">★★★★★ 8300+ положительных отзывов</div>
 
 <div class="info">
-📍 Аргынбекова 81, Шымкент<br>
+📍 Астана, ул. Кенесары, 70А<br>
 🕒 График работы: 10:00 – 21:00 ежедневно
 </div>
 
@@ -232,7 +228,7 @@ var popupContent = `
 `;
 
 
-var marker = L.marker([42.3618597, 69.6037711]).addTo(map);
+var marker = L.marker([51.163731, 71.459]).addTo(map);
 marker.bindPopup(popupContent);
 
 marker.on('click', function(){
