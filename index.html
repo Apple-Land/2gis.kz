@@ -160,7 +160,7 @@ margin-top:8px;
 <div class="side-rating">★★★★★ 8300+ отзывов</div>
 
 <p class="side-info">
-📍 Астана, ул. Кенесары, 70А<br>
+📍 Шымкент, Улица Аргынбекова, 80<br>
 🕒 10:00 – 21:00 ежедневно<br>
 📞 +7 (708) 386‑04‑78
 </p>
@@ -193,7 +193,7 @@ document.getElementById('sidebar').classList.remove('open');
 
 var map = L.map('map', {
 attributionControl: false
-}).setView([51.163454, 71.459238], 16);
+}).setView([42.366278, 69.582431], 16);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: '© OSM'
@@ -210,7 +210,7 @@ var popupContent = `
 <div class="rating">★★★★★ 8300+ положительных отзывов</div>
 
 <div class="info">
-📍 Астана, ул. Кенесары, 70А<br>
+📍 Шымкент, Улица Аргынбекова, 80<br>
 🕒 График работы: 10:00 – 21:00 ежедневно
 </div>
 
@@ -228,7 +228,7 @@ var popupContent = `
 `;
 
 
-var marker = L.marker([51.163454, 71.459238]).addTo(map);
+var marker = L.marker([42.366278, 69.582431]).addTo(map);
 marker.bindPopup(popupContent);
 
 marker.on('click', function(){
